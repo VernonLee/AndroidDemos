@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries_containers">
+        <item>GridView 单选</item>
+        <item>GridView 多选</item>
+        <item>ListView 单选</item>
+        <item>ListView 多选</item>
+    </string-array>
+</resources>

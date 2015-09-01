@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.checkable"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".BaseGridActivity"
+            android:label="GridView基本类"/>
+        <activity android:name=".SCGridActivity"
+            android:label="GridView单选模式"/>
+        <activity android:name=".MCGridActivity"
+            android:label="GridView多选模式"/>
+        <activity android:name=".BaseListActivity"
+            android:label="ListView基本模式"/>
+        <activity android:name=".SCListActivity"
+            android:label="ListView单选模式"/>
+        <activity android:name=".MCListActivity"
+            android:label="ListViwe多选模式"/>
+    </application>
+
+</manifest>
