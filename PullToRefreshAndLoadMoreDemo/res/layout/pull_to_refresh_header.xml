@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="bottom"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/view_ptr_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="8dp" >
+
+        <RelativeLayout
+            android:id="@+id/view_ptr_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <TextView
+                android:id="@+id/txt_ptr_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="@string/pull_down_to_refresh"
+                android:textColor="@color/pull_to_refresh_title"
+                android:textSize="@dimen/pull_to_refresh_title" />
+
+            <TextView
+                android:id="@+id/txt_ptr_update_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_ptr_title"
+                android:layout_marginTop="6dp"
+                android:text="@string/pull_to_refresh_last_time"
+                android:textColor="@color/pull_to_refresh_time"
+                android:textSize="@dimen/pull_to_refresh_time" />
+
+            <TextView
+                android:id="@+id/txt_ptr_update_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_ptr_title"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@id/txt_ptr_update_time_label"
+                android:minWidth="50dp"
+                android:textColor="@color/pull_to_refresh_time"
+                android:textSize="@dimen/pull_to_refresh_time" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_ptr_arrow"
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@id/view_ptr_text"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/pull_arrow" />
+
+        <ProgressBar
+            android:id="@+id/progress_ptr_refreshing"
+            android:layout_width="28dip"
+            android:layout_height="28dip"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@id/view_ptr_text"
+            android:gravity="center"
+            android:indeterminateDrawable="@anim/pull_progress_rotate"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>

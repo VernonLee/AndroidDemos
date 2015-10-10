@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nodlee.refresh.MainActivity" >
+
+    <com.nodlee.refresh.view.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include layout="@layout/pull_to_refresh_header" />
+        
+        <com.nodlee.refresh.view.PullableListView
+            android:id="@+id/content_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp" />
+
+        <include layout="@layout/pull_to_load_footer" />
+    </com.nodlee.refresh.view.PullToRefreshLayout>
+
+</RelativeLayout>
