@@ -70,6 +70,8 @@ public class PullToRefreshLayout extends RelativeLayout {
 	
 	/** 按下Y坐标，上一个事件点Y坐标*/
 	private float downY, lastY;
+	/** 按下X坐标 */
+	private float downX;
 	/** 下拉的距离。注意：pullDownY和pullUpY不可能同时不为0 */
 	public float pullDownY = 0;
 	/** 上拉的距离 */
@@ -284,6 +286,7 @@ public class PullToRefreshLayout extends RelativeLayout {
 		switch (ev.getActionMasked()) {
 		case MotionEvent.ACTION_DOWN:
 			downY = ev.getY();
+			downX = ev.getX();
 			lastY = downY;
 			timer.cancel();
 			mEvents = 0;
@@ -295,6 +298,13 @@ public class PullToRefreshLayout extends RelativeLayout {
 			break;
 		case MotionEvent.ACTION_MOVE:
 			if (mEvents == 0) {
+			        // 只接受上下滑动，取消处理左右滑动
+			        float offsetX = downX - ev.getX();
+               		        float offsetY = downY - ev.getY();
+			        if ((Math.abs(offsetX) > mPagingTouchSlop && Math.abs(offsetX) > Math.abs(offsetY))) {
+				   return super.dispatchTouchEvent(ev);
+                                }
+                                
 				if (pullDownY > 0
 						|| (((Pullable) pullableView).canPullDown()
 								&& canPullDown && state != LOADING)) {
