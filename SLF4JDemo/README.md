@@ -65,8 +65,11 @@ SLF4J(Simple Logging Facade for Java), 中文名称简单日志门面。它不�
 * __FATAL:__用于记录发生非常严重的事件，这类事件可能导致应用程序发生中断。大多数情况下，出现这样的错误后应用将会崩溃并停止运行。
 * __OFF:__在日志级别中最高，用于关闭日志系统。
 
+
 2. 小技巧  
 
 * 使用占位符 “{}” 提高效率  
   logger.debug("No of Orders " + noOfOrder + " for client : " + client); // slower 
   logger.debug("No of Executions {} for clients:{}", noOfOrder , client); // faster
+
+* 在开发过程中，日志级别设为INFO，用于输出DEBUG和INFO信息。但是在正式发布后调整为WARN，有些数据我们是不希望用户看到的，输出异常数据就好。
