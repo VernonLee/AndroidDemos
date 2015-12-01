@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HummListener</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_clear">clear</string>
+
+    <string name="voice_record_hint">点击话筒录入内容 :)</string>
+</resources>
