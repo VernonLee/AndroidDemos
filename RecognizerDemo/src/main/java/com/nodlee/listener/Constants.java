@@ -5,5 +5,5 @@ package com.nodlee.listener;
  */
 public class Constants {
     // 替换为自己的APP_KEY
-    public static final String APP_ID = "565c0311";
+    public static final String APP_ID = "";
 }
